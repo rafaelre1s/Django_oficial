@@ -1,6 +1,6 @@
 from django.urls import path
-from core import views
+from . import views
 
 urlpatterns = [
-    path('', views.index, name='index'),  # raiz do core → aparece em '/'
+    path('', views.hello_world, name='hello_world'),
 ]
