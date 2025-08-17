@@ -1,4 +1,5 @@
 from django.contrib import admin
+from core.models import Post
 
 # Register your models here.
 from django.contrib import admin
@@ -10,3 +11,4 @@ class PostAdmin(admin.ModelAdmin):
     list_filter = ('status', 'created_on', 'author')
     search_fields = ('title', 'content')
     prepopulated_fields = {'slug': ('title',)}
+

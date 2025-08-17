@@ -23,3 +23,4 @@ urlpatterns = [
     path("", PostView.as_view(), name="home"),   # <-- rota da home
     path("<slug:slug>/", PostDetail.as_view(), name="post_detail"),
 ]
+
