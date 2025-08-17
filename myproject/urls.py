@@ -16,7 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from core.views import PostView, PostDetail
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path("admin/", admin.site.urls),
+    path("", PostView.as_view(), name="home"),   # <-- rota da home
+    path("<slug:slug>/", PostDetail.as_view(), name="post_detail"),
 ]
