@@ -15,9 +15,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
+from core.views import PostView, PostDetail
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('core.urls')),   # << agora o core cuida da raiz
+    path("admin/", admin.site.urls),
+    path("", PostView.as_view(), name="home"),   # <-- rota da home
+    path("<slug:slug>/", PostDetail.as_view(), name="post_detail"),
 ]
+
